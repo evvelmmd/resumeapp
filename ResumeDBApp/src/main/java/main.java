@@ -28,8 +28,9 @@ public class main {
 //        UserDao.updateUser(u);
 //        System.out.println(u.toString());
 
-        User u = new User(4, "SAlam", "Dosdar", "dos@gmaiil.com", "0705123982");
-        UserDao.addUser(u);
+        System.out.println(UserDao.getAll());
+
+
 
     }
 }
