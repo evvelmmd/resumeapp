@@ -1,16 +1,16 @@
-package bean;
+package entity;
 
-public class Nationality {
+public class Country {
     private int id;
     private String name;
-    private String country_name;
+    private String nationality;
 
-    public Nationality(){}
+    public Country(){}
 
-    public Nationality(int id, String name, String country_name) {
+    public Country(int id, String name, String country_name) {
         this.id = id;
         this.name = name;
-        this.country_name = country_name;
+        this.nationality = country_name;
     }
 
     public int getId() {
@@ -29,20 +29,20 @@ public class Nationality {
         this.name = name;
     }
 
-    public String getCountry_name() {
-        return country_name;
+    public String getNationality() {
+        return nationality;
     }
 
-    public void setCountry_name(String country_name) {
-        this.country_name = country_name;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     @Override
     public String toString() {
-        return "Nationality{" +
+        return "Country{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", country_name='" + country_name + '\'' +
+                ", nationality='" + nationality + '\'' +
                 '}';
     }
 }

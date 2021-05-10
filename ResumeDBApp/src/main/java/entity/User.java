@@ -1,6 +1,7 @@
-package bean;
+package entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
     private int id;
@@ -9,10 +10,12 @@ public class User {
     private String email;
     private String phone;
     private Date birthdate;
-    private Nationality nationality;
-    private Nationality birthplace;
+    private Country nationality;
+    private Country birthplace;
+    private List<User_skill> skills;
 
-    public User(int id, String name, String surname, String email, String phone, Date birthdate, Nationality nationality, Nationality birthplace) {
+
+    public User(int id, String name, String surname, String email, String phone, Date birthdate, Country nationality, Country birthplace) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -31,6 +34,10 @@ public class User {
         this.phone = phone;
     }
     public User(){};
+
+    public User(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
@@ -72,20 +79,28 @@ public class User {
         this.birthdate = birthdate;
     }
 
-    public Nationality getNationality() {
+    public Country getNationality() {
         return nationality;
     }
 
-    public void setNationality(Nationality nationality) {
+    public void setNationality(Country nationality) {
         this.nationality = nationality;
     }
 
-    public Nationality getBirthplace() {
+    public Country getBirthplace() {
         return birthplace;
     }
 
-    public void setBirthplace(Nationality birthplace) {
+    public void setBirthplace(Country birthplace) {
         this.birthplace = birthplace;
+    }
+
+    public List<User_skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<User_skill> skills) {
+        this.skills = skills;
     }
 
     @Override

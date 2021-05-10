@@ -1,11 +1,11 @@
-import DaoInter.UserDaoInter;
-import bean.User;
-import dao.impl.UserDaoImpl;
+import DaoInter.*;
+import dao.impl.*;
 
 public class main {
-    public static void main(String[] args) throws Exception{
-        UserDaoInter UserDao =new UserDaoImpl();
-
+    public static void main(String[] args) throws Exception {
+//        UserDaoInter UserDao =new UserDaoImpl();
+//        UserSkillDaoInter UserDao =new UserSkillDaoImpl();
+//        EmploymentHistoryDaoInter dao = new EmploymentHistoryDaoImpl();
 //        UserDao.removeUser(1);
 //        List<User> list2 = UserDao.getAll();
 //        System.out.println("list: " + list);
@@ -28,9 +28,11 @@ public class main {
 //        UserDao.updateUser(u);
 //        System.out.println(u.toString());
 
-        System.out.println(UserDao.getAll());
+//        System.out.println(dao.getAllEmploymentHistoryByUserId(19));
 
+        SkillDaoInter dao = new SkillDaoImpl();
 
+        System.out.println(dao.getAll());
 
     }
 }
