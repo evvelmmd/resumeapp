@@ -1,9 +1,14 @@
 import DaoInter.*;
 import dao.impl.*;
+import entity.User;
 
 public class main {
     public static void main(String[] args) throws Exception {
 //        UserDaoInter UserDao =new UserDaoImpl();
+//        System.out.println(UserDao.getById(19));
+
+//        CountryDaoInter cdi= new CountryDaoImpl();    
+//        System.out.println(cdi.getAll());
 //        UserSkillDaoInter UserDao =new UserSkillDaoImpl();
 //        EmploymentHistoryDaoInter dao = new EmploymentHistoryDaoImpl();
 //        UserDao.removeUser(1);
@@ -22,17 +27,22 @@ public class main {
 //        List<User> list = UserDao.getAll();
 //        System.out.println("list: " + list);
 
-//        User u =UserDao.getById(2);
-//        u.setName("Evvel");
-//        u.setPhone("0705123982");
-//        UserDao.updateUser(u);
+      //  User u =UserDao.getById(19);
+    /*    u.setName("Evvel");
+           u.setSurname("Memmedli");
+           u.setEmail("evvel");
+           u.setPhone("22131");
+           u.setProfileDescroiption("bosbos");
+        UserDao.updateUser(u);*/
 //        System.out.println(u.toString());
 
 //        System.out.println(dao.getAllEmploymentHistoryByUserId(19));
 
-        SkillDaoInter dao = new SkillDaoImpl();
+//        SkillDaoInter dao = new SkillDaoImpl();
 
-        System.out.println(dao.getAll());
-
+       // System.out.println(dao.getAll());
+//       UserSkillDaoInter userDao=new UserSkillDaoImpl();
+//     
+//       
     }
 }

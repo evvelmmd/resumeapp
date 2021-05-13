@@ -3,26 +3,57 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package com.company.resume.main;
+
+import com.company.resume.Config;
+import DaoInter.CountryDaoInter;
+import DaoInter.UserDaoInter;
+import dao.impl.CountryDaoImpl;
+import dao.impl.UserDaoImpl;
+import entity.Country;
+import entity.User;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
  *
  * @author Avval Mammadov
  */
-public class main extends javax.swing.JFrame {
+public class mainUser extends javax.swing.JFrame {
     
- 
+    private UserDaoInter userDao=new UserDaoImpl();
+    
+    
+    
     /**
      * Creates new form main
      */
-    public main() {
-        
-      
+    public mainUser() {
+        Config.loggedInUser=userDao.getById(19);
         initComponents();
+        fillUserComponents();
+         panelSkill.fillUserComponents();
+        panelDetails.fillUserComponents();
+        panelProfile.fillUserComponents();
+       
+        
        
     }
     
+    public void fillUserComponents(){
+   
+    User loggedInUser = Config.loggedInUser;
+   
+    txtName.setText(loggedInUser.getName());
+    txtSurname.setText(loggedInUser.getSurname());
+    
+    }
+  
     
 
     /**
@@ -36,12 +67,9 @@ public class main extends javax.swing.JFrame {
 
         jSeparator1 = new javax.swing.JSeparator();
         tpUserInfo = new javax.swing.JTabbedPane();
-        pnlProfile = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtAreaProfile = new javax.swing.JTextArea();
-        pnlDetails = new javax.swing.JPanel();
-        pnlSkills = new javax.swing.JPanel();
-        pnlEmploymentHistory = new javax.swing.JPanel();
+        panelProfile = new com.company.resume.panel.ProfilePanel();
+        panelDetails = new com.company.resume.panel.DetailsPanel();
+        panelSkill = new com.company.resume.panel.SkillPanel();
         pnlUserInfo = new javax.swing.JPanel();
         lblName = new javax.swing.JLabel();
         lblSurname = new javax.swing.JLabel();
@@ -53,70 +81,9 @@ public class main extends javax.swing.JFrame {
 
         tpUserInfo.setToolTipText("");
         tpUserInfo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-
-        pnlProfile.setBackground(new java.awt.Color(204, 255, 255));
-
-        txtAreaProfile.setColumns(20);
-        txtAreaProfile.setRows(5);
-        jScrollPane1.setViewportView(txtAreaProfile);
-
-        javax.swing.GroupLayout pnlProfileLayout = new javax.swing.GroupLayout(pnlProfile);
-        pnlProfile.setLayout(pnlProfileLayout);
-        pnlProfileLayout.setHorizontalGroup(
-            pnlProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
-        );
-        pnlProfileLayout.setVerticalGroup(
-            pnlProfileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-        );
-
-        tpUserInfo.addTab("Profile", pnlProfile);
-
-        pnlDetails.setBackground(new java.awt.Color(51, 153, 255));
-
-        javax.swing.GroupLayout pnlDetailsLayout = new javax.swing.GroupLayout(pnlDetails);
-        pnlDetails.setLayout(pnlDetailsLayout);
-        pnlDetailsLayout.setHorizontalGroup(
-            pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 918, Short.MAX_VALUE)
-        );
-        pnlDetailsLayout.setVerticalGroup(
-            pnlDetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
-        );
-
-        tpUserInfo.addTab("Details", pnlDetails);
-
-        pnlSkills.setBackground(new java.awt.Color(153, 255, 153));
-
-        javax.swing.GroupLayout pnlSkillsLayout = new javax.swing.GroupLayout(pnlSkills);
-        pnlSkills.setLayout(pnlSkillsLayout);
-        pnlSkillsLayout.setHorizontalGroup(
-            pnlSkillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 918, Short.MAX_VALUE)
-        );
-        pnlSkillsLayout.setVerticalGroup(
-            pnlSkillsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
-        );
-
-        tpUserInfo.addTab("Skills", pnlSkills);
-
-        pnlEmploymentHistory.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout pnlEmploymentHistoryLayout = new javax.swing.GroupLayout(pnlEmploymentHistory);
-        pnlEmploymentHistory.setLayout(pnlEmploymentHistoryLayout);
-        pnlEmploymentHistoryLayout.setHorizontalGroup(
-            pnlEmploymentHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 918, Short.MAX_VALUE)
-        );
-        pnlEmploymentHistoryLayout.setVerticalGroup(
-            pnlEmploymentHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
-        );
-
-        tpUserInfo.addTab("Employment History", pnlEmploymentHistory);
+        tpUserInfo.addTab("Profile", panelProfile);
+        tpUserInfo.addTab("Details", panelDetails);
+        tpUserInfo.addTab("Skills", panelSkill);
 
         lblName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblName.setText("Name");
@@ -126,8 +93,10 @@ public class main extends javax.swing.JFrame {
         lblSurname.setText("Surname");
         lblSurname.setToolTipText("Enter your name");
 
+        txtSurname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtSurname.setForeground(new java.awt.Color(51, 51, 51));
 
+        txtName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtName.setForeground(new java.awt.Color(51, 51, 51));
 
         btnSave.setText("Save");
@@ -203,10 +172,19 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText();
         String surname =txtSurname.getText();
-        String profDesc=txtAreaProfile.getText();
+        
+        User user = Config.loggedInUser;
+        user.setName(name);
+        user.setSurname(surname);
+        
+        panelProfile.fillUser(user);
+        panelDetails.fillUser(user);
         
         
         
+        
+       userDao.updateUser(user);
+       
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
@@ -226,14 +204,18 @@ public class main extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -242,24 +224,21 @@ public class main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new main().setVisible(true);
+                new mainUser().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblSurname;
-    private javax.swing.JPanel pnlDetails;
-    private javax.swing.JPanel pnlEmploymentHistory;
-    private javax.swing.JPanel pnlProfile;
-    private javax.swing.JPanel pnlSkills;
+    private com.company.resume.panel.DetailsPanel panelDetails;
+    private com.company.resume.panel.ProfilePanel panelProfile;
+    private com.company.resume.panel.SkillPanel panelSkill;
     private javax.swing.JPanel pnlUserInfo;
     private javax.swing.JTabbedPane tpUserInfo;
-    private javax.swing.JTextArea txtAreaProfile;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtSurname;
     // End of variables declaration//GEN-END:variables

@@ -1,6 +1,6 @@
 package entity;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class User {
@@ -9,18 +9,23 @@ public class User {
     private String surname;
     private String email;
     private String phone;
+    private String profileDescription;
+    private String adress;
     private Date birthdate;
     private Country nationality;
     private Country birthplace;
     private List<User_skill> skills;
 
 
-    public User(int id, String name, String surname, String email, String phone, Date birthdate, Country nationality, Country birthplace) {
+    public User(int id, String name, String surname,  String email, String phone, String profileDescription,String adress,Date birthdate, Country nationality, Country birthplace) {
+        
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
+        this.profileDescription=profileDescription;
+        this.adress=adress;
         this.birthdate = birthdate;
         this.nationality = nationality;
         this.birthplace = birthplace;
@@ -103,17 +108,29 @@ public class User {
         this.skills = skills;
     }
 
+    public String getProfileDescription() {
+        return profileDescription;
+    }
+
+    public void setProfileDescription(String profileDescription) {
+        this.profileDescription = profileDescription;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birthdate=" + birthdate +
-                ", nationality=" + nationality +
-                ", birthplace=" + birthplace +
-                '}';
+        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phone=" + phone + ", profileDescription=" + profileDescription + ", adress=" + adress + ", birthdate=" + birthdate + ", nationality=" + nationality + ", birthplace=" + birthplace + ", skills=" + skills + '}';
     }
+    
+    
+    
+    
+
 }

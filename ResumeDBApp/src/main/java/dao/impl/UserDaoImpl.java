@@ -6,12 +6,13 @@ import entity.Skill;
 import entity.User;
 import entity.User_skill;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import static entity.DbConnection.connect;
@@ -23,6 +24,8 @@ public class UserDaoImpl implements UserDaoInter {
         String surname = rs.getString("surname");
         String email = rs.getString("email");
         String phone = rs.getString("phone");
+        String profileDesc = rs.getString("profileDescription");
+        String adress=rs.getString("Adress");
         int nationalityId = rs.getInt("nationality_id");
         int bithplaceId = rs.getInt("birthplace_id");
         Date birthDate = rs.getDate("birthdate");
@@ -32,7 +35,7 @@ public class UserDaoImpl implements UserDaoInter {
         Country nationality = new Country(nationalityId, null, nationalityStr);
         Country birthPlace = new Country(bithplaceId, birthPlaceStr, null);
 
-        return new User(id, name, surname, email, phone, birthDate, nationality, birthPlace);
+        return new User(id, name, surname, email, phone, profileDesc,adress, birthDate, nationality, birthPlace);
 
     }
 
@@ -70,13 +73,19 @@ public class UserDaoImpl implements UserDaoInter {
             Connection c = connect();
             c = connect();
 
-            PreparedStatement stmt = c.prepareStatement("update user set name=? ,surname=? ,email=? ,phone=? where id =?");
+            PreparedStatement stmt = c.prepareStatement("update user set name=? ,surname=? ,email=? "
+                    + ",phone=?, profileDescription=?, adress=? , birthdate=?, birthplace_id=? ,nationality_id=? where id =?");
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurname());
             stmt.setString(3, u.getEmail());
             stmt.setString(4, u.getPhone());
-
-            stmt.setInt(5, u.getId());
+            
+            stmt.setString(5, u.getProfileDescription());
+            stmt.setString(6, u.getAdress());
+            stmt.setDate(7, u.getBirthdate());
+            stmt.setInt(8, u.getBirthplace().getId());
+            stmt.setInt(9, u.getNationality().getId());
+            stmt.setInt(10, u.getId());
             return stmt.execute();
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,12 +137,15 @@ public class UserDaoImpl implements UserDaoInter {
     public boolean addUser(User u) {
         try (Connection c = connect()) {
 
-            PreparedStatement stmt = c.prepareStatement("insert into user(name,surname,email,phone) values(?,?,?,?)");
+            PreparedStatement stmt = c.prepareStatement("insert into user(name,surname,email,phone,profileDescription,adress,birthdate) values(?,?,?,?,?,?,?)");
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurname());
             stmt.setString(3, u.getEmail());
             stmt.setString(4, u.getPhone());
-
+            
+            stmt.setString(5, u.getProfileDescription());
+            stmt.setString(6, u.getAdress());
+            stmt.setDate(7, u.getBirthdate());
             return stmt.execute();
 
         } catch (Exception ex) {
