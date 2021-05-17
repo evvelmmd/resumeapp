@@ -3,6 +3,7 @@ package entity;
 import java.sql.Date;
 import java.util.List;
 
+
 public class User {
     private int id;
     private String name;
@@ -17,15 +18,15 @@ public class User {
     private List<User_skill> skills;
 
 
-    public User(int id, String name, String surname,  String email, String phone, String profileDescription,String adress,Date birthdate, Country nationality, Country birthplace) {
-        
+    public User(int id, String name, String surname, String email, String phone, String profileDescription, String adress, Date birthdate, Country nationality, Country birthplace) {
+
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
-        this.profileDescription=profileDescription;
-        this.adress=adress;
+        this.profileDescription = profileDescription;
+        this.adress = adress;
         this.birthdate = birthdate;
         this.nationality = nationality;
         this.birthplace = birthplace;
@@ -38,7 +39,11 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public User(){};
+
+    public User() {
+    }
+
+    ;
 
     public User(int id) {
         this.id = id;
@@ -128,9 +133,6 @@ public class User {
     public String toString() {
         return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", email=" + email + ", phone=" + phone + ", profileDescription=" + profileDescription + ", adress=" + adress + ", birthdate=" + birthdate + ", nationality=" + nationality + ", birthplace=" + birthplace + ", skills=" + skills + '}';
     }
-    
-    
-    
-    
+
 
 }

@@ -5,7 +5,8 @@ public class Country {
     private String name;
     private String nationality;
 
-    public Country(){}
+    public Country() {
+    }
 
     public Country(int id, String name, String country_name) {
         this.id = id;
@@ -61,11 +62,10 @@ public class Country {
         }
         return true;
     }
-    
-    
-    
+
+
     @Override
     public String toString() {
-        return name +","+ nationality ;
+        return name + "," + nationality;
     }
 }

@@ -27,7 +27,7 @@ public class main {
 //        List<User> list = UserDao.getAll();
 //        System.out.println("list: " + list);
 
-      //  User u =UserDao.getById(19);
+        //  User u =UserDao.getById(19);
     /*    u.setName("Evvel");
            u.setSurname("Memmedli");
            u.setEmail("evvel");
@@ -40,7 +40,7 @@ public class main {
 
 //        SkillDaoInter dao = new SkillDaoImpl();
 
-       // System.out.println(dao.getAll());
+        // System.out.println(dao.getAll());
 //       UserSkillDaoInter userDao=new UserSkillDaoImpl();
 //     
 //       

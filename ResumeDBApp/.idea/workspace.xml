@@ -6,6 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="987cd0fa-f0ee-4475-9243-9061f1c05d47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoInter/EmploymentHistoryDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoInter/EmploymentHistoryDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoInter/SkillDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoInter/SkillDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoInter/UserDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoInter/UserDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoInter/UserSkillDaoInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoInter/UserSkillDaoInter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SkillDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SkillDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/UserSkillDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/UserSkillDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Employment_history.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Employment_history.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User_skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User_skill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ResumeDesktopApp/src/main/java/com/company/resume/main/mainAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDesktopApp/src/main/java/com/company/resume/main/mainAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ResumeDesktopApp/src/main/java/com/company/resume/main/mainUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ResumeDesktopApp/src/main/java/com/company/resume/main/mainUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../database/resume.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../database/resume.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +162,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1620680409402" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ResumeDesktopApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -172,6 +189,10 @@
       <workItem from="1620679499404" duration="681000" />
       <workItem from="1620910958366" duration="260000" />
       <workItem from="1620919882968" duration="36000" />
+      <workItem from="1621075767196" duration="318000" />
+      <workItem from="1621076203082" duration="2895000" />
+      <workItem from="1621264325050" duration="509000" />
+      <workItem from="1621264858301" duration="204000" />
     </task>
     <task id="LOCAL-00001" summary="Update new">
       <created>1620668188448</created>

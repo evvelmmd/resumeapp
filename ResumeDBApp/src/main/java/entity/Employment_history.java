@@ -10,7 +10,8 @@ public class Employment_history {
     private String jobDesc;
     private User user;
 
-    public Employment_history(){}
+    public Employment_history() {
+    }
 
     public Employment_history(Integer id, String header, Date beginDate, Date endDate, String jobDesc, User user) {
         this.id = id;

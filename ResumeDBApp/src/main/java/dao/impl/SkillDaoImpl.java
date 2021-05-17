@@ -1,8 +1,11 @@
 package dao.impl;
 
 import DaoInter.SkillDaoInter;
+
 import static entity.DbConnection.connect;
+
 import entity.Skill;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,10 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author TURAL
  */
-public class SkillDaoImpl  implements SkillDaoInter {
+public class SkillDaoImpl implements SkillDaoInter {
 
     @Override
     public List<Skill> getAll() {

@@ -1,10 +1,10 @@
 package DaoInter;
 
 import entity.Skill;
+
 import java.util.List;
 
 /**
- *
  * @author TURAL
  */
 public interface SkillDaoInter {

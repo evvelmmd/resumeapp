@@ -12,7 +12,11 @@ public class User_skill {
         this.skill = skill;
         this.power = power;
     }
-    public User_skill(){};
+
+    public User_skill() {
+    }
+
+    ;
 
     public Integer getId() {
         return id;

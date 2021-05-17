@@ -4,9 +4,11 @@ import DaoInter.UserSkillDaoInter;
 
 
 import static entity.DbConnection.connect;
+
 import entity.Skill;
 import entity.User;
 import entity.User_skill;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * @author sarkhanrasullu Data Access Object
  */
 public class UserSkillDaoImpl implements UserSkillDaoInter {
